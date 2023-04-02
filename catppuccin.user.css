@@ -222,7 +222,8 @@
 
   /* badges */
   .bili-header .red-num--message,
-  .bili-header .message-entry-popover .message-inner-list__item--num {
+  .bili-header .message-entry-popover .message-inner-list__item--num,
+  .bili-header .red-num--dynamic {
     background: $accent-color;
     color: $base;
   }
