@@ -6,39 +6,39 @@
 </h3>
 
 <p align="center">
-	<a href="https://github.com/huge-pancake/bilibili-catppuccin/stargazers"><img src="https://img.shields.io/github/stars/huge-pancake/bilibili-catppuccin?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/huge-pancake/bilibili-catppuccin/issues"><img src="https://img.shields.io/github/issues/huge-pancake/bilibili-catppuccin?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/huge-pancake/bilibili-catppuccin/contributors"><img src="https://img.shields.io/github/contributors/huge-pancake/bilibili-catppuccin?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/vollowx/bilibili-catppuccin/stargazers"><img src="https://img.shields.io/github/stars/vollowx/bilibili-catppuccin?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/vollowx/bilibili-catppuccin/issues"><img src="https://img.shields.io/github/issues/vollowx/bilibili-catppuccin?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/vollowx/bilibili-catppuccin/contributors"><img src="https://img.shields.io/github/contributors/vollowx/bilibili-catppuccin?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/huge-pancake/bilibili-catppuccin/assets/preview.png"/>
+	<img src="https://raw.githubusercontent.com/vollowx/bilibili-catppuccin/assets/preview.png"/>
 </p>
 
 ## Previews
 
 <details>
 <summary>🌻 Latte</summary>
-<img src="https://raw.githubusercontent.com/huge-pancake/bilibili-catppuccin/assets/latte.png"/>
+<img src="https://raw.githubusercontent.com/vollowx/bilibili-catppuccin/assets/latte.png"/>
 </details>
 <details>
 <summary>🪴 Frappé</summary>
-<img src="https://raw.githubusercontent.com/huge-pancake/bilibili-catppuccin/assets/frappe.png"/>
+<img src="https://raw.githubusercontent.com/vollowx/bilibili-catppuccin/assets/frappe.png"/>
 </details>
 <details>
 <summary>🌺 Macchiato</summary>
-<img src="https://raw.githubusercontent.com/huge-pancake/bilibili-catppuccin/assets/macchiato.png"/>
+<img src="https://raw.githubusercontent.com/vollowx/bilibili-catppuccin/assets/macchiato.png"/>
 </details>
 <details>
 <summary>🌿 Mocha</summary>
-<img src="https://raw.githubusercontent.com/huge-pancake/bilibili-catppuccin/assets/mocha.png"/>
+<img src="https://raw.githubusercontent.com/vollowx/bilibili-catppuccin/assets/mocha.png"/>
 </details>
 
 ## Usage
 
 1. Install Stylus [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/styl-us/)/[Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) extension.
 2. Enable CSP Patching from Stylus Settings > Advanced.
-3. [Click here to install.](https://github.com/huge-pancake/bilibili-catppuccin/raw/main/catppuccin.user.css)
+3. [Click here to install.](https://github.com/vollowx/bilibili-catppuccin/raw/main/catppuccin.user.css)
 
 <!-- this section is optional -->
 
