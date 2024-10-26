@@ -1,273 +1,189 @@
 /* ==UserStyle==
-@name           Bilibili Catppuccin
-@namespace      github.com/huge-pancake/bilibili-catppuccin
-@version        1.0.0
-@description    Soothing pastel theme for Bilibili
-@author         huge-pancake
-@updateURL      https://github.com/huge-pancake/bilibili-catppuccin/raw/main/catppuccin.user.css
-@preprocessor   stylus
-@var select theme "Theme" ["Latte", "Frappe", "Macchiato", "Mocha*"]
-@var select accent-color "Accent" ["Rosewater*", "Flamingo", "Pink", "Mauve", "Red", "Maroon", "Peach", "Yellow", "Green", "Teal", "Blue", "Sapphire", "Sky", "Lavender", "Gray"]
-@var checkbox topbar "Topbar colors" 1
+@name Bilibili Catppuccin
+@namespace github.com/catppuccin/userstyles/styles/bilibili
+@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/bilibili
+@version 0.0.1
+@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/bilibili/catppuccin.user.css
+@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Abilibili
+@description Soothing pastel theme for Bilibili
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
-@-moz-document domain("bilibili.com") {
-  if (theme=="Latte") {
-    $type = light
 
-    $rosewater = #dc8a78
-    $flamingo = #dd7878
-    $pink = #ea76cb
-    $mauve = #8839ef
-    $red = #d20f39
-    $maroon = #e64553
-    $peach = #fe640b
-    $yellow = #df8e1d
-    $green = #40a02b
-    $teal = #179299
-    $sky = #04a5e5
-    $sapphire = #209fb5
-    $blue = #1e66f5
-    $lavender = #7287fd
-    $text = #4c4f69
-    $subtext1 = #5c5f77
-    $subtext0 = #6c6f85
-    $overlay2 = #7c7f93
-    $overlay1 = #8c8fa1
-    $overlay0 = #9ca0b0
-    $surface2 = #acb0be
-    $surface1 = #bcc0cc
-    $surface0 = #ccd0da
-    $base = #eff1f5
-    $mantle = #e6e9ef
-    $crust = #dce0e8
-    $shadow = $crust
+@-moz-document domain('bilibili.com') {
+  /* This section applies the light/dark themes automatically based on the user's system theme.
+     Use the below example CSS to start if the website you are theming doesn't have a light/dark mode toggle.
+     For an actual example of this, see https://github.com/catppuccin/userstyles/blob/39288b593278e5efa48007d5fc001292cf910672/styles/brave-search/catppuccin.user.css#L16-L29.
+  */
+  @media (prefers-color-scheme: light) {
+    :root {
+      #catppuccin(@lightFlavor, @accentColor);
+    }
   }
-  else if (theme=="Frappe") {
-    $type = dark
-
-    $rosewater = #f2d5cf
-    $flamingo = #eebebe
-    $pink = #f4b8e4
-    $mauve = #ca9ee6
-    $red = #e78284
-    $maroon = #ea999c
-    $peach = #ef9f76
-    $yellow = #e5c890
-    $green = #a6d189
-    $teal = #81c8be
-    $sky = #99d1db
-    $sapphire = #85c1dc
-    $blue = #8caaee
-    $lavender = #babbf1
-    $text = #c6d0f5
-    $subtext1 = #b5bfe2
-    $subtext0 = #a5adce
-    $overlay2 = #949cbb
-    $overlay1 = #838ba7
-    $overlay0 = #737994
-    $surface2 = #626880
-    $surface1 = #51576d
-    $surface0 = #414559
-    $base = #303446
-    $mantle = #292c3c
-    $crust = #232634
-    $shadow = $crust
-  }
-  else if (theme=="Macchiato") {
-    $type = dark
-
-    $rosewater = #f4dbd6
-    $flamingo = #f0c6c6
-    $pink = #f5bde6
-    $mauve = #c6a0f6
-    $red = #ed8796
-    $maroon = #ee99a0
-    $peach = #f5a97f
-    $yellow = #eed49f
-    $green = #a6da95
-    $teal = #8bd5ca
-    $sky = #91d7e3
-    $sapphire = #7dc4e4
-    $blue = #8aadf4
-    $lavender = #b7bdf8
-    $text = #cad3f5
-    $subtext1 = #b8c0e0
-    $subtext0 = #a5adcb
-    $overlay2 = #939ab7
-    $overlay1 = #8087a2
-    $overlay0 = #6e738d
-    $surface2 = #5b6078
-    $surface1 = #494d64
-    $surface0 = #363a4f
-    $base = #24273a
-    $mantle = #1e2030
-    $crust = #181926
-    $shadow = $crust
-  }
-  else if (theme=="Mocha") {
-    $type = dark
-
-    $rosewater = #f5e0dc
-    $flamingo = #f2cdcd
-    $pink = #f5c2e7
-    $mauve = #cba6f7
-    $red = #f38ba8
-    $maroon = #eba0ac
-    $peach = #fab387
-    $yellow = #f9e2af
-    $green = #a6e3a1
-    $teal = #94e2d5
-    $sky = #89dceb
-    $sapphire = #74c7ec
-    $lavender = #b4befe
-    $blue = #89b4fa
-    $text = #cdd6f4
-    $subtext1 = #bac2de
-    $subtext0 = #a6adc8
-    $overlay2 = #9399b2
-    $overlay1 = #7f849c
-    $overlay0 = #6c7086
-    $surface2 = #585b70
-    $surface1 = #45475a
-    $surface0 = #313244
-    $base = #1e1e2e
-    $mantle = #181825
-    $crust = #11111b
-    $shadow = $crust
-  }
-  if (accent-color=="Rosewater") {
-    $accent-color = $rosewater;
-  } else if (accent-color=="Flamingo") {
-    $accent-color = $flamingo
-  } else if (accent-color=="Pink") {
-    $accent-color = $pink
-  } else if (accent-color=="Mauve") {
-    $accent-color = $mauve
-  } else if (accent-color=="Red") {
-    $accent-color = $red
-  } else if (accent-color=="Maroon") {
-    $accent-color = $maroon
-  } else if (accent-color=="Peach") {
-    $accent-color = $peach
-  } else if (accent-color=="Yellow") {
-    $accent-color = $yellow
-  } else if (accent-color=="Green") {
-    $accent-color = $green
-  } else if (accent-color=="Teal") {
-    $accent-color = $teal
-  } else if (accent-color=="Blue") {
-    $accent-color = $blue
-  } else if (accent-color=="Sapphire") {
-    $accent-color = $sapphire
-  } else if (accent-color=="Sky") {
-    $accent-color = $sky
-  } else if (accent-color=="Lavender") {
-    $accent-color = $lavender
-  } else if (accent-color=="Gray") {
-    $accent-color = $subtext0
+  @media (prefers-color-scheme: dark) {
+    :root {
+      #catppuccin(@darkFlavor, @accentColor);
+    }
   }
 
-  /* Functions */
-  hoverColor(col) {
-    return blend(alpha(col, 0.7), $text)
+  /* If the website you are theming *does* have a light/dark mode toggle,
+     you can conditionally enable light/dark flavors by targeting whatever
+     attribute that website uses to indicate the theme. *The example below gives you an idea of what
+     to look for. The website you are theming may use a class-based approach (e.g. :root.theme-dark),
+     or any of the myriad of other methods like this.*
+     Use the below example CSS to start if this is the case.
+     For an actual example of this, see https://github.com/catppuccin/userstyles/blob/39288b593278e5efa48007d5fc001292cf910672/styles/youtube/catppuccin.user.css#L21-L30.
+  */
+  :root[data-theme="dark"] {
+    #catppuccin(@darkFlavor, @accentColor);
   }
-  activeColor(col) {
-    return blend(alpha(col, 0.5), $text)
-  }
-  disabledColor(col) {
-    return blend(alpha(col, 0.4), $base)
+  :root[data-theme="light"] {
+    #catppuccin(@lightFlavor, @accentColor);
   }
 
-  :root {
-    color-scheme: $type;
+  #catppuccin(@lookup, @accent) {
+    @rosewater: @catppuccin[@@lookup][@rosewater];
+    @flamingo: @catppuccin[@@lookup][@flamingo];
+    @pink: @catppuccin[@@lookup][@pink];
+    @mauve: @catppuccin[@@lookup][@mauve];
+    @red: @catppuccin[@@lookup][@red];
+    @maroon: @catppuccin[@@lookup][@maroon];
+    @peach: @catppuccin[@@lookup][@peach];
+    @yellow: @catppuccin[@@lookup][@yellow];
+    @green: @catppuccin[@@lookup][@green];
+    @teal: @catppuccin[@@lookup][@teal];
+    @sky: @catppuccin[@@lookup][@sky];
+    @sapphire: @catppuccin[@@lookup][@sapphire];
+    @blue: @catppuccin[@@lookup][@blue];
+    @lavender: @catppuccin[@@lookup][@lavender];
+    @text: @catppuccin[@@lookup][@text];
+    @subtext1: @catppuccin[@@lookup][@subtext1];
+    @subtext0: @catppuccin[@@lookup][@subtext0];
+    @overlay2: @catppuccin[@@lookup][@overlay2];
+    @overlay1: @catppuccin[@@lookup][@overlay1];
+    @overlay0: @catppuccin[@@lookup][@overlay0];
+    @surface2: @catppuccin[@@lookup][@surface2];
+    @surface1: @catppuccin[@@lookup][@surface1];
+    @surface0: @catppuccin[@@lookup][@surface0];
+    @base: @catppuccin[@@lookup][@base];
+    @mantle: @catppuccin[@@lookup][@mantle];
+    @crust: @catppuccin[@@lookup][@crust];
+    @accent-color: @catppuccin[@@lookup][@@accent];
 
-    --bg1: $base;
-    --bg1_float: $mantle;
-    --bg2: $surface0;
-    --bg2_float: $surface1;
-    --bg3: $surface1;
-    --text1: $text;
-    --text2: $text;
-    --text3: $subtext0;
-    --text_white: $base;
-    --graph_icon: $text;
-    --graph_bg_thin: $surface0;
-    --graph_bg_regular: $surface0;
-    --graph_bg_thick: hoverColor($surface0)
+    color-scheme: if(@lookup = latte, light, dark);
+
+    ::selection {
+      background-color: fade(@accent-color, 30%);
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+
+    /* Start styling your website here: */
+    background-color: @base;
+    
+    --bg1: @base;
+    --bg1_float: @mantle;
+    --bg2: @surface0;
+    --bg2_float: @mantle;
+    --bg3: @surface1;
+    --text1: @text;
+    --text2: @text;
+    --text3: @subtext0;
+    --text_white: @base;
+    --graph_icon: @text;
+    --graph_bg_thin: @surface0;
+    --graph_bg_regular: @surface0;
+    --graph_bg_thick: hoverColor(@surface0)
     /* borders */
-    --line_light: $overlay0;
-    --line_regular: $overlay0;
-    --graph_weak: $overlay0;
+    --Ga1: @overlay0; // !!! Non-semantic naming
+    --line_light: @overlay0;
+    --line_regular: @overlay0;
+    --graph_weak: @overlay0;
     /* special colors */
-    --brand_blue: $blue;
-    --brand_pink: $pink;
-    --brand_pink_thin: $pink;
-  }
+    --brand_blue: @blue;
+    --brand_pink: @pink;
+    --brand_pink_thin: @pink;
 
-  /* account page doesn't follow --bg1 color */
-  html,
-  #page-index .col-1 {
-    background: var(--bg1);
-  }
+    /* account page doesn't follow --bg1 color */
+    html,
+    #page-index .col-1 {
+      background: var(--bg1);
+    }
 
-  .v-popover-content {
-    background-color: $surface0;
-  }
+    .v-popover-content {
+      background-color: @mantle;
+    }
 
-  /* sub-ed uploader name under video card */
-  .bili-video-card .bili-video-card__info--icon-text {
-    color: $accent-color;
-    background-color: $surface0;
-  }
+    /* sub-ed uploader name under video card */
+    .bili-video-card .bili-video-card__info--icon-text {
+      color: @accent-color;
+      background-color: @surface0;
+    }
 
-  /* badges */
-  .bili-header .red-num--message,
-  .bili-header .message-entry-popover .message-inner-list__item--num,
-  .bili-header .red-num--dynamic {
-    background: $accent-color;
-    color: $base;
-  }
+    /* badges */
+    .bili-header .red-num--message,
+    .bili-header .message-entry-popover .message-inner-list__item--num,
+    .bili-header .red-num--dynamic {
+      background: @accent-color;
+      color: @base;
+    }
 
-  /* upload button */
-  .bili-header .header-upload-entry {
-    background: $accent-color;
-    color: $base;
-  }
-  .bili-header .header-upload-entry__icon {
-    color: $base;
-  }
+    /* upload button */
+    .bili-header .header-upload-entry {
+      background: @accent-color;
+      color: @base;
+    }
+    .bili-header .header-upload-entry__icon {
+      color: @base;
+    }
 
-  /* charge button */
-  .up-info-v1 .btn-panel .new-charge-btn {
-    color: var(--brand_pink);
-  }
-  .up-info-v1 .btn-panel .new-charge-btn:hover {
-    color: $base;
-  }
+    /* charge button */
+    .up-info-v1 .btn-panel .new-charge-btn {
+      color: var(--brand_pink);
+    }
+    .up-info-v1 .btn-panel .new-charge-btn:hover {
+      color: @base;
+    }
 
-  /* sub button */
-  .up-info-v1 .btn-panel .not-follow:hover {
-    background-color: hoverColor($blue);
-  }
+    /* sub button */
+    .up-info-v1 .btn-panel .not-follow:hover {
+      background-color: hoverColor(@blue);
+    }
 
-  /* comment box */
-  .reply-box .box-normal .reply-box-warp .reply-box-textarea[data-v-46b8da04] {
-    background-color: var(--bg1);
-    border-color: var(--graph_weak);
-  }
+    /* button under comment box */
+    .emoji-btn,
+    .at-btn {
+      border-color: @overlay0 !important;
+    }
 
-  /* button under comment box */
-  .emoji-btn,
-  .at-btn {
-    border-color: $overlay0 !important;
-  }
+    /* switch */
+    .next-button .switch-button::after {
+      background-color: @surface0;
+    }
 
-  /* switch */
-  .next-button .switch-button::after {
-    background-color: $surface0;
-  }
-
-  ::selection {
-    background: $surface2 !important;
+    & when (@lookup = latte) {
+    }
+    & when not (@lookup = latte) {
+    }
   }
 }
+
+/* prettier-ignore */
+@catppuccin: {
+  @latte:     { @rosewater: #dc8a78; @flamingo: #dd7878; @pink: #ea76cb; @mauve: #8839ef; @red: #d20f39; @maroon: #e64553; @peach: #fe640b; @yellow: #df8e1d; @green: #40a02b; @teal: #179299; @sky: #04a5e5; @sapphire: #209fb5; @blue: #1e66f5; @lavender: #7287fd; @text: #4c4f69; @subtext1: #5c5f77; @subtext0: #6c6f85; @overlay2: #7c7f93; @overlay1: #8c8fa1; @overlay0: #9ca0b0; @surface2: #acb0be; @surface1: #bcc0cc; @surface0: #ccd0da; @base: #eff1f5; @mantle: #e6e9ef; @crust: #dce0e8; };
+  @frappe:    { @rosewater: #f2d5cf; @flamingo: #eebebe; @pink: #f4b8e4; @mauve: #ca9ee6; @red: #e78284; @maroon: #ea999c; @peach: #ef9f76; @yellow: #e5c890; @green: #a6d189; @teal: #81c8be; @sky: #99d1db; @sapphire: #85c1dc; @blue: #8caaee; @lavender: #babbf1; @text: #c6d0f5; @subtext1: #b5bfe2; @subtext0: #a5adce; @overlay2: #949cbb; @overlay1: #838ba7; @overlay0: #737994; @surface2: #626880; @surface1: #51576d; @surface0: #414559; @base: #303446; @mantle: #292c3c; @crust: #232634; };
+  @macchiato: { @rosewater: #f4dbd6; @flamingo: #f0c6c6; @pink: #f5bde6; @mauve: #c6a0f6; @red: #ed8796; @maroon: #ee99a0; @peach: #f5a97f; @yellow: #eed49f; @green: #a6da95; @teal: #8bd5ca; @sky: #91d7e3; @sapphire: #7dc4e4; @blue: #8aadf4; @lavender: #b7bdf8; @text: #cad3f5; @subtext1: #b8c0e0; @subtext0: #a5adcb; @overlay2: #939ab7; @overlay1: #8087a2; @overlay0: #6e738d; @surface2: #5b6078; @surface1: #494d64; @surface0: #363a4f; @base: #24273a; @mantle: #1e2030; @crust: #181926; };
+  @mocha:     { @rosewater: #f5e0dc; @flamingo: #f2cdcd; @pink: #f5c2e7; @mauve: #cba6f7; @red: #f38ba8; @maroon: #eba0ac; @peach: #fab387; @yellow: #f9e2af; @green: #a6e3a1; @teal: #94e2d5; @sky: #89dceb; @sapphire: #74c7ec; @blue: #89b4fa; @lavender: #b4befe; @text: #cdd6f4; @subtext1: #bac2de; @subtext0: #a6adc8; @overlay2: #9399b2; @overlay1: #7f849c; @overlay0: #6c7086; @surface2: #585b70; @surface1: #45475a; @surface0: #313244; @base: #1e1e2e; @mantle: #181825; @crust: #11111b; };
+}
+
+// vim:ft=less
