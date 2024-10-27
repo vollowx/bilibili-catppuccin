@@ -1,5 +1,3 @@
-update url now unavailable
+Due to the suck naming of bilibili, this repo is not going to be merged into catppuccin/userstyles.
 
-go to the catppuccin.user.css and click the `Raw` button to install/update manually
-
-(maybe) being merged to upstream soon...
+The `updateURL` is currently wrong, you need to go to the `catppuccin.user.css` and click the `Raw` button to install/update manually.
