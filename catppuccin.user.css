@@ -1,9 +1,9 @@
 /* ==UserStyle==
 @name Bilibili Catppuccin
 @namespace github.com/catppuccin/userstyles/styles/bilibili
-@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/bilibili
+@homepageURL https://github.com/vollowx/bilibili-catppuccin
 @version 0.0.1
-@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/bilibili/catppuccin.user.css
+@updateURL https://github.com/vollowx/bilibili-catppuccin/blob/main/catppuccin.user.css
 @supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Abilibili
 @description Soothing pastel theme for Bilibili
 @author Catppuccin
@@ -136,6 +136,11 @@
     .bili-header .red-num--dynamic {
       background: @accent-color;
       color: @base;
+    }
+
+    /* header */
+    .nickname {
+      color: var(--text1) !important;
     }
 
     /* upload button */
